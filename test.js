@@ -1,3 +1,11 @@
+// 시작버튼
+function start(){
+    alert("시작하시겠습니까?")
+}
+
+start()
+
+
 // logic
 // n * m 배열 생성 => 이게 안되니까 i개의 배열 요소 생성
 // 랜덤한 숫자 생성 => 인덱스 번호로 대입, 이게 틀린 글자로 연결
@@ -17,6 +25,7 @@ function makeArr(i){
     arr.splice(random,1,'먽');
     // document.write(arr);
 };
+
 
 makeArr(25);
 console.log(arr);
@@ -61,12 +70,11 @@ function correct(){
 // 제한시간 timer
 const Timer = document.getElementById('Timer');
 let time = 10000;
-let sec = 10;
+let sec = 11;
 
 function TIMER(){
     PLAYTIME = setInterval(function(){
         time= time - 1000;
-
         if(sec > 0){
             sec = sec-1;
             Timer.value = sec;
@@ -80,6 +88,6 @@ TIMER();
 setTimeout(function(){
     clearInterval(PLAYTIME);
     alert("시간초과, 다시하시겠습니까?");
-    // location.reload();
-},11000)
+    location.reload();
+},10000)
 

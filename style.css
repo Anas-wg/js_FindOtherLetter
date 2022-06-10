@@ -1,5 +1,13 @@
+@font-face {
+    font-family: 'SeoulHangangM';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/SeoulHangangM.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     box-sizing: border-box;
+    font-family: 'SeoulHangangM';
 }
 
 
@@ -32,7 +40,7 @@ p {
 
 
 button {
-    background-color: #F7DC6F;
+    background-color: #ebee1a;
     width: 100px;
     height: 100px;
     font-size: 16px;
