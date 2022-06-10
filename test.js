@@ -13,12 +13,12 @@ function makeArr(i){
     let random = Math.floor(Math.random() * i);
     med = random;
 
-    // random으로 뽑힌 인덱스 번호에 다른 글자 삽입;
+    // random으로 뽑힌 인덱스 번호에 다른 글자 삽입;ge
     arr.splice(random,1,'먽');
     // document.write(arr);
 };
 
-makeArr(16);
+makeArr(25);
 console.log(arr);
 
 
@@ -27,12 +27,16 @@ function makebtn(){
     for(let i = 0; i < arr.length; i++){
         let btn = document.createElement('button');
         if(i == med){
+            btn = document.createElement("button");
+            btn.id = "answer";
+        }else{
             btn = document.createElement("button")
-            btn.id = "answer"
+            btn.id = "wrong"
         }
         let btnText = document.createTextNode(arr[i]);
         btn.appendChild(btnText);
-        document.body.appendChild(btn);
+        // document.body.appendChild(btn);
+        document.getElementById("select_area").appendChild(btn);
     }
 }
 
@@ -40,13 +44,42 @@ makebtn();
 
 
 let answer = document.getElementById("answer");
+let wrong = document.getElementById("wrong");
 
-answer.onclick = function(){guess()};
+answer.onclick = function(){correct()};
+wrong.onclick = function(){retry()};
 
-function guess(){
+function correct(){
     if(answer = true){
-        alert("정답");
+        alert("정답")
     }
+    // i = i + 5
     location.reload();
 }
+
+
+// 제한시간 timer
+const Timer = document.getElementById('Timer');
+let time = 10000;
+let sec = 10;
+
+function TIMER(){
+    PLAYTIME = setInterval(function(){
+        time= time - 1000;
+
+        if(sec > 0){
+            sec = sec-1;
+            Timer.value = sec;
+        }
+    },1000);
+}
+
+
+TIMER();
+
+setTimeout(function(){
+    clearInterval(PLAYTIME);
+    alert("시간초과, 다시하시겠습니까?");
+    // location.reload();
+},11000)
 
