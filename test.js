@@ -69,7 +69,8 @@ function correct(){
 
 // 제한시간 timer
 const Timer = document.getElementById('Timer');
-let time = 10000;
+let time = 11000;
+// 1초정도 딜레이가 있음, 10초부터 1초까지 나오려면 11초를 해야함 왜일까...?
 let sec = 11;
 
 function TIMER(){
@@ -89,5 +90,6 @@ setTimeout(function(){
     clearInterval(PLAYTIME);
     alert("시간초과, 다시하시겠습니까?");
     location.reload();
-},10000)
+},11000)
+
 
