@@ -60,10 +60,11 @@ empty.onclick = function(){retry()};
 
 function correct(){
     if(answer = true){
-        alert("정답")
         // 정답을 고르면 timer 스탑
-        clearInterval(PLAYTIME)
-
+        setTimeout(function(){
+            clearInterval(PLAYTIME);
+            alert("정답")
+        },0)
     }
     // i = i + 5
     location.reload();
