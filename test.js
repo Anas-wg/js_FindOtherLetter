@@ -21,7 +21,7 @@ function makeArr(i){
     let random = Math.floor(Math.random() * i);
     med = random;
 
-    // random으로 뽑힌 인덱스 번호에 다른 글자 삽입;ge
+    // random으로 뽑힌 인덱스 번호에 다른 글자 삽입;
     arr.splice(random,1,'먽');
     // document.write(arr);
 };
@@ -40,7 +40,7 @@ function makebtn(){
             btn.id = "answer";
         }else{
             btn = document.createElement("button")
-            btn.id = "wrong"
+            btn.classList.add("empty");
         }
         let btnText = document.createTextNode(arr[i]);
         btn.appendChild(btnText);
@@ -53,16 +53,26 @@ makebtn();
 
 
 let answer = document.getElementById("answer");
-let wrong = document.getElementById("wrong");
+let empty = document.getElementsByClassName("empty");
 
 answer.onclick = function(){correct()};
-wrong.onclick = function(){retry()};
+empty.onclick = function(){retry()};
 
 function correct(){
     if(answer = true){
         alert("정답")
+        // 정답을 고르면 timer 스탑
+        clearInterval(PLAYTIME)
+
     }
     // i = i + 5
+    location.reload();
+}
+
+function retry(){
+    if(empty = true){
+        alert("오답, 다시!")
+    }
     location.reload();
 }
 
